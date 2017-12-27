@@ -2,7 +2,7 @@
     <transition name="popup-fade">
         <template v-if="type == 'show'">
             <div v-show="value"
-                class="popup-container"
+                class="ro-popup-container"
                 :class="[containerClass,
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
@@ -14,7 +14,7 @@
         </template>
         <template v-if="type == 'if'">
             <div v-if="value"
-                class="popup-container"
+                class="ro-popup-container"
                 :class="[containerClass,
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
@@ -112,7 +112,7 @@
 </script>
 
 <style lang="less">
-    .popup-container {
+    .ro-popup-container {
         top: 0;
         left: 0;
         width: 100%;
@@ -148,15 +148,23 @@
                 transform: translate3d(0, -50%, 0);
             }
         }
-    }
-    .popup-container.fixed {
-        position: fixed;
-        z-index: 20; // 默认20
-    }
-    .popup-container.absolute {
-        position: absolute;
+        &.fixed {
+            position: fixed;
+            z-index: 20; // 默认20
+        }
+        &.absolute {
+            position: absolute;
+        }
     }
 
+    // iphonex适配
+    @supports (padding-bottom: constant(safe-area-inset-bottom)) {
+        .popup {
+            padding-bottom: constant(safe-area-inset-bottom);
+        }
+    }
+
+    // 动画
     .popup-fade-enter-active,
     .popup-fade-leave-active {
         transition: all 0.3s ease;
