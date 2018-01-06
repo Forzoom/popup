@@ -58,7 +58,11 @@ contentStyle|"容器"样式
 #### 0.0.3
 
 1. 适配iphoneX
-2. 修改样式名称
+1. 修改样式名称
+
+#### 0.0.4
+
+1. 修改原本content元素中的.stop效果
 
 ### Changelog
 

@@ -7,7 +7,7 @@
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
                 @click="onClickContainer">
-                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click.stop="noop">
+                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click="noop">
                     <slot></slot>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
                 @click="onClickContainer">
-                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click.stop="noop">
+                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click="noop">
                     <slot></slot>
                 </div>
             </div>
@@ -99,8 +99,9 @@
             /**
              * 点击容器，进行关闭
              */
-            onClickContainer() {
-                if (!this.modal) {
+            onClickContainer(e) {
+                const target = e.target;
+                if (!this.modal && target.className.indexOf('ro-popup-container') !== -1) {
                     this.$emit('input', false);
                 }
             },
