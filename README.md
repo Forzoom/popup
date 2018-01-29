@@ -68,6 +68,10 @@ contentStyle|"容器"样式
 
 1. 适配iphonex
 
+#### 0.0.6
+
+1. 修复适配iphonex错误
+
 ### Changelog
 
 #### 0.0.3

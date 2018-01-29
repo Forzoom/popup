@@ -159,10 +159,10 @@
     }
 
     // iphonex适配
-    @supports (padding-bottom: constant(safe-area-inset-bottom) or (padding-bottom: env(safe-area-inset-bottom)) {
+    @supports (padding-bottom: constant(safe-area-inset-bottom)) or (padding-bottom: env(safe-area-inset-bottom)) {
         .popup {
-            padding-bottom: env(safe-area-inset-bottom);
             padding-bottom: constant(safe-area-inset-bottom);
+            padding-bottom: env(safe-area-inset-bottom);
         }
     }
 
