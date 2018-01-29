@@ -64,6 +64,10 @@ contentStyle|"容器"样式
 
 1. 修改原本content元素中的.stop效果
 
+#### 0.0.5
+
+1. 适配iphonex
+
 ### Changelog
 
 #### 0.0.3
