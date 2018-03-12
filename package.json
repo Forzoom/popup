@@ -1,6 +1,6 @@
 {
   "name": "@forzoom/popup",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "dist/popup.common.js",
   "module": "dist/popup.esm.js",
@@ -21,9 +21,7 @@
   "devDependencies": {
     "rollup-plugin-vue": "^3.0.0",
     "vue": "^2.4.2",
-    "vue-template-compiler": "^2.5.15"
-  },
-  "dependencies": {
+    "vue-template-compiler": "^2.5.15",
     "rollup": "^0.56.5"
   }
 }
