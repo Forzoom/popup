@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /**
  *
  */
-var popup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"popup-fade"}},[(_vm.type == 'show')?[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"ro-popup-container",class:[_vm.containerClass, {fixed: _vm.mode == 'fixed', absolute: _vm.mode == 'absolute'}],style:(_vm.containerStyle),on:{"click":_vm.onClickContainer}},[_c('div',{staticClass:"popup",class:[_vm.position, _vm.contentClass,],style:(_vm.contentStyle),on:{"click":_vm.noop}},[_vm._t("default")],2)])]:_vm._e(),_vm._v(" "),(_vm.type == 'if')?[(_vm.value)?_c('div',{staticClass:"ro-popup-container",class:[_vm.containerClass, {fixed: _vm.mode == 'fixed', absolute: _vm.mode == 'absolute'}],style:(_vm.containerStyle),on:{"click":_vm.onClickContainer}},[_c('div',{staticClass:"popup",class:[_vm.position, _vm.contentClass,],style:(_vm.contentStyle),on:{"click":_vm.noop}},[_vm._t("default")],2)]):_vm._e()]:_vm._e()],2)},staticRenderFns: [],
+var popup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"popup-fade"}},[(_vm.type == 'show')?[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"ro-popup-container",class:[_vm.containerClass, {fixed: _vm.mode == 'fixed', absolute: _vm.mode == 'absolute'}],style:(_vm.containerStyle),on:{"click":_vm.onClickContainer}},[_c('div',{staticClass:"popup",class:[_vm.position, _vm.contentClass, {'popup-iphonex': _vm.fitIphonex}],style:(_vm.contentStyle),on:{"click":_vm.noop}},[_vm._t("default")],2)])]:_vm._e(),_vm._v(" "),(_vm.type == 'if')?[(_vm.value)?_c('div',{staticClass:"ro-popup-container",class:[_vm.containerClass, {fixed: _vm.mode == 'fixed', absolute: _vm.mode == 'absolute'}],style:(_vm.containerStyle),on:{"click":_vm.onClickContainer}},[_c('div',{staticClass:"popup",class:[_vm.position, _vm.contentClass, {'popup-iphonex': _vm.fitIphonex}],style:(_vm.contentStyle),on:{"click":_vm.noop}},[_vm._t("default")],2)]):_vm._e()]:_vm._e()],2)},staticRenderFns: [],
     name: 'Popup',
     props: {
         /**
@@ -65,6 +65,13 @@ var popup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
          * 是否模态
          */
         modal: {
+            type: Boolean,
+            default: false,
+        },
+        /**
+         * 适配iphonex，默认不适配iphonex
+         */
+        fitIphonex: {
             type: Boolean,
             default: false,
         },

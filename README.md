@@ -44,6 +44,7 @@ position|位置，可以是bottom/center/top
 mode|固定方式，可以是fixed/absolute
 type|显示方式，可以是if/show
 modal|是否模态，可以是true/false
+fitIphonex(false)|是否适配iphonex
 containerClass|"容器"样式类
 containerStyle|"容器"样式
 contentClass|"内容"样式类
@@ -75,6 +76,14 @@ contentStyle|"容器"样式
 #### 0.0.6
 
 1. 修复适配iphonex错误
+
+#### 0.1.3
+
+1. 换用rollup替换webpack进行打包，输出cjs和es格式，同时输出一个css文件
+
+#### 0.1.4
+
+1. popup添加fitIphonex属性用来决定是否对于iphonex进行适配
 
 ### Changelog
 

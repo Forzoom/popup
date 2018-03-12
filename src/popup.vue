@@ -7,7 +7,7 @@
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
                 @click="onClickContainer">
-                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click="noop">
+                <div class="popup" :class="[position, contentClass, {'popup-iphonex': fitIphonex}]" :style="contentStyle" @click="noop">
                     <slot></slot>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
                 :style="containerStyle"
                 @click="onClickContainer">
-                <div class="popup" :class="[position, contentClass,]" :style="contentStyle" @click="noop">
+                <div class="popup" :class="[position, contentClass, {'popup-iphonex': fitIphonex}]" :style="contentStyle" @click="noop">
                     <slot></slot>
                 </div>
             </div>
@@ -94,6 +94,13 @@
                 type: Boolean,
                 default: false,
             },
+            /**
+             * 适配iphonex，默认不适配iphonex
+             */
+            fitIphonex: {
+                type: Boolean,
+                default: false,
+            },
         },
         methods: {
             /**
@@ -160,7 +167,7 @@
 
     // iphonex适配
     @supports (padding-bottom: constant(safe-area-inset-bottom)) or (padding-bottom: env(safe-area-inset-bottom)) {
-        .popup {
+        .popup.popup-iphonex {
             padding-bottom: constant(safe-area-inset-bottom);
             padding-bottom: env(safe-area-inset-bottom);
         }
