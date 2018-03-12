@@ -6,29 +6,33 @@ npm install @forzoom/popup
 
 ```javascript
 <template>
-	<div>
-		<Popup v-model="visible" position="center" mode="fixed" type="if" :modal="true">
-			...
-		</Popup>
-	</div>
+    <div>
+        <Popup v-model="visible" position="center" mode="fixed" type="if" :modal="true">
+            ...
+        </Popup>
+    </div>
 </template>
 
 <script>
-	import {
-		Popup,
-	} from '@forzoom/popup';
+    import {
+        Popup,
+    } from '@forzoom/popup';
 
-	export default {
-		components: {
-			Popup,
-		},
-		data() {
-			return {
-				visible: false,
-			};
-		},
-	};
+    export default {
+        components: {
+            Popup,
+        },
+        data() {
+            return {
+                visible: false,
+            };
+        },
+    };
 </script>
+
+<style>
+    @import "./node_modules/popup/dist/popup.css";
+</style>
 ```
 
 ### Props
