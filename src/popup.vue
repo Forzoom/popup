@@ -99,13 +99,13 @@
             /**
              * 点击容器，进行关闭
              */
-            onClickContainer(e) {
+            onClickContainer: function(e) {
                 const target = e.target;
                 if (!this.modal && target.className.indexOf('ro-popup-container') !== -1) {
                     this.$emit('input', false);
                 }
             },
-            noop() {
+            noop: function() {
                 // do nothing
             },
         },

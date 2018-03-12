@@ -69,13 +69,13 @@ var popup = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
         /**
          * 点击容器，进行关闭
          */
-        onClickContainer(e) {
+        onClickContainer: function(e) {
             const target = e.target;
             if (!this.modal && target.className.indexOf('ro-popup-container') !== -1) {
                 this.$emit('input', false);
             }
         },
-        noop() {
+        noop: function() {
             // do nothing
         },
     },

@@ -78,6 +78,6 @@ contentStyle|"容器"样式
 
 1. 修改样式名称: popup-container -> ro-popup-container
 
-#### 0.1.0
+#### 0.1.2
 
 1. 换用rollup替换webpack进行打包，输出cjs和es格式，同时输出一个css文件
