@@ -85,12 +85,16 @@ contentStyle|"容器"样式
 
 1. popup添加fitIphonex属性用来决定是否对于iphonex进行适配
 
+#### 0.1.5
+
+1. 修复popup中使用const的问题
+
 ### Changelog
 
 #### 0.0.3
 
 1. 修改样式名称: popup-container -> ro-popup-container
 
-#### 0.1.3
+#### 0.1.5
 
 1. 换用rollup替换webpack进行打包，输出cjs和es格式，同时输出一个css文件
