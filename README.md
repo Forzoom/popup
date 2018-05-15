@@ -35,66 +35,43 @@ npm install @forzoom/popup
 </style>
 ```
 
+渲染后结果大致如下
+
+```html
+    <div v-if="value"
+        class="ro-popup-container"
+        :class="[containerClass, {fixed: mode == 'fixed', absolute: mode == 'absolute'}]"
+        :style="containerStyle"
+        @click="onClickContainer">
+        <div class="popup"
+            :class="[position, contentClass, {'popup-iphonex': fitIphonex}]"
+            :style="contentStyle"
+            @click="noop">
+            ...
+        </div>
+    </div>
+```
+
+其中 `div.ro-popup-container` 作为容器和遮罩，生成底部半透明黑色图层
+`div.popup` 作为内容的容器，实现popup的居中/居上/居下的效果
+
 ### Props
 
-key | value
---- | ---
-value|是否显示，可以是true/false
-position|位置，可以是bottom/center/top
-mode|固定方式，可以是fixed/absolute
-type|显示方式，可以是if/show
-modal|是否模态，可以是true/false
-fitIphonex(false)|是否适配iphonex
-containerClass|"容器"样式类
-containerStyle|"容器"样式
-contentClass|"内容"样式类
-contentStyle|"容器"样式
+| key | value | type | default | 
+| --- | --- | --- | --- |
+| value | 是否显示popup | boolean | required |
+| position | 控制居中/居上/居下 | enum<string> = 'bottom', 'center', 'top' | 'bottom' |
+| mode | 位置固定方式。控制使用position: fixed或者position: absolute | enum<string> = 'fixed', 'absolute' | 'fixed' |
+| type | 显示方式。可以是if/show | enum<string> = 'if', 'show' | 'show' |
+| moda | 是否模态 | boolean | false |
+| fitIphonex | 是否适配iphonex | boolean | false |
+| containerClass | "容器"样式类 | Array, object | null |
+| containerStyle | "容器"样式 | Array, object | null |
+| contentClass | "内容"样式类 | Array, object | null |
+| contentStyle | "容器"样式 | Array, object | null |
 
-### Version
+### Events
 
-#### 0.0.1
-
-1. 添加基础功能
-
-#### 0.0.2
-
-1. 添加popup-fade动画
-
-#### 0.0.3
-
-1. 适配iphoneX
-1. 修改样式名称
-
-#### 0.0.4
-
-1. 修改原本content元素中的.stop效果
-
-#### 0.0.5
-
-1. 适配iphonex
-
-#### 0.0.6
-
-1. 修复适配iphonex错误
-
-#### 0.1.3
-
-1. 换用rollup替换webpack进行打包，输出cjs和es格式，同时输出一个css文件
-
-#### 0.1.4
-
-1. popup添加fitIphonex属性用来决定是否对于iphonex进行适配
-
-#### 0.1.5
-
-1. 修复popup中使用const的问题
-
-### Changelog
-
-#### 0.0.3
-
-1. 修改样式名称: popup-container -> ro-popup-container
-
-#### 0.1.5
-
-1. 换用rollup替换webpack进行打包，输出cjs和es格式，同时输出一个css文件
+| key | description | payload |
+| --- | --- | --- |
+| input | 当显示/隐藏时将触发该事件 | true/false |
